@@ -6,13 +6,13 @@ import {ApiProperty} from '@nestjs/swagger'
         timestamps:true
     }
 })
-
-export class User{
-    @ApiProperty({description:'用户名',example:'user1'})
+export class TeamRecord{
+    @ApiProperty({description:'球队名称',example:'巴萨罗纳'})
     @prop( )
-    username : string
+    teamname:string
 
-    @ApiProperty({description:'密码',example:'123456'})
+    @ApiProperty({description:'进球数',example:'8'})
     @prop( )
-    password:string
+    scores:string
+
 }
