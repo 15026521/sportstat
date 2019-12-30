@@ -9,6 +9,17 @@ import {TeamRecord} from './teamrecord.model'
 })
 
 export class Match{
+    @ApiProperty({ description: '比赛名称' })
+    @prop()
+    name: string;
+
+    @ApiProperty({ description: '封面图' })
+    @prop()
+    cover: string;
+
+    @prop()
+    date: string;
+
     @ApiProperty({description:'运动类别',example:'足球'})
     @prop( )
     sporttype : string

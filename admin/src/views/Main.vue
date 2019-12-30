@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width = "200px">
-      <el-menu mode="vertical" :default-active="$route.path" router>
+      <el-menu mode="vertical" style="height:100vh;" :default-active="$route.path" router>
         <el-submenu 
           v-for="(item, index) in menu.items"
           :index="`menu-item-${index}`"
@@ -12,24 +12,19 @@
               v-for="(subItem, subIndex) in item.items"
               :key="`menu-item-${index}-${subIndex}`"
               :index="subItem.path"
-          >{{subItem.title}}
-          </el-menu-item>
+          >{{subItem.title}}</el-menu-item>
         </el-submenu>
       </el-menu>
-      
     </el-aside>
     <el-container>
       <el-header>
         玩转运动数据-后台管理界面
       </el-header>
       <el-main>
-        <router-view>
-
-        </router-view>
+        <router-view :key="$route.path"></router-view>
       </el-main>
     </el-container>
   </el-container>
-
 </template>
 
 <script lang="ts">
@@ -40,17 +35,17 @@
     menu = {
       items:[
         {
-          title:'内容管理',
-          items:[
-            { title: '首页',path:'/'},
-            { title: '比赛管理',path:'matches/list'},
-            { title: '数据管理',path:'teamrecords/list'},
-          ]
+          title:"内容管理",
+          items: [
+          { title: "首页", path: "/" },
+          { title: "比赛管理", path: "/matches/list" },
+          { title: "数据管理", path: "/teamrecords/list" }
+        ]
         },
          {
           title:'运营管理',
           items:[
-            { title: '用户管理',path:'users/list'},
+            { title: '用户管理',path:'/users/list'},
           ]
         }
       ]

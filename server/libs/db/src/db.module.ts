@@ -5,15 +5,22 @@ import {User} from './models/user.model';
 import { TeamRecord } from './models/teamrecord.model';
 import { Match } from './models/match.model';
 
-const  models = TypegooseModule.forFeature([
-  User,
-  Match,
-  TeamRecord
-])
+const  models = TypegooseModule.forFeature([User,Match,TeamRecord])
 
 @Global()
 @Module({
   imports:[
+    // TypegooseModule.forRootAsync({
+    //   useFactory() {
+    //     return {
+    //       uri: process.env.DB,
+    //       useNewUrlParser: true,
+    //       useUnifiedTopology: true,
+    //       useCreateIndex: true,
+    //       useFindAndModify: false,
+    //     };
+    //   },
+    // }),
     TypegooseModule.forRoot('mongodb://localhost/sportstat', {
       useNewUrlParser:true,
       useUnifiedTopology:true,

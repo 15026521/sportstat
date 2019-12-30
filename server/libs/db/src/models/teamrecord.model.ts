@@ -7,6 +7,12 @@ import {ApiProperty} from '@nestjs/swagger'
     }
 })
 export class TeamRecord{
+    @prop()
+    name: string
+
+    @prop()
+    file: string
+    
     @ApiProperty({description:'球队名称',example:'巴萨罗纳'})
     @prop( )
     teamname:string
