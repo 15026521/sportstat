@@ -1,6 +1,5 @@
 import {prop, modelOptions,arrayProp,Ref} from '@typegoose/typegoose'
 import {ApiProperty} from '@nestjs/swagger'
-import {TeamRecord} from './teamrecord.model'
 
 @modelOptions({
     schemaOptions:{
@@ -9,38 +8,30 @@ import {TeamRecord} from './teamrecord.model'
 })
 
 export class Match{
-    @ApiProperty({ description: '比赛名称' })
+    
+    @ApiProperty({ description: '赛事id' })
     @prop()
-    name: string;
+    matchId: number;
 
-    @ApiProperty({ description: '封面图' })
+    @ApiProperty({ description: '赛事名称',example:'中超联赛' })
     @prop()
-    cover: string;
-
-    @prop()
-    date: string;
+    matchName: string;
 
     @ApiProperty({description:'运动类别',example:'足球'})
     @prop( )
-    sporttype : string
+    sportType : string
 
-    @ApiProperty({description:'比赛日期',example:'2019-12-12'})
+    @ApiProperty({description:'赛事级别',example:'超级'})
     @prop( )
-    date:string
+    matchLevel:string
 
-    @ApiProperty({description:'主队名称',example:'巴萨罗纳'})
+    @ApiProperty({description:'国家',example:'中国'})
     @prop( )
-    hometeam:string
+    country:string
 
-    @ApiProperty({description:'客队名称',example:'皇家马德里'})
+    @ApiProperty({description:'比赛数量',example:'5'})
     @prop( )
-    visitingteam:string
+    gameNum:number
 
-    @ApiProperty({description:'比赛结果',example:'主队胜'})
-    @prop( )
-    gameresult:string
-
-    @ApiProperty({description:'数据统计结果'})
-    @arrayProp({itemsRef:'TeamRecord'} )
-    matchrecords:Ref<TeamRecord>[]
+    
 }

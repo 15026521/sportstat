@@ -4,7 +4,7 @@ import { ReturnModelType } from '@typegoose/typegoose';
 import { Crud } from 'nestjs-mongoose-crud'
 import { ApiTags } from '@nestjs/swagger';
 import { TeamRecord } from '@libs/db/models/teamrecord.model';
-import { Match } from '@libs/db/models/match.model';
+import { Game } from '@libs/db/models/game.model';
 
 @Crud({
     model:TeamRecord
@@ -14,7 +14,7 @@ import { Match } from '@libs/db/models/match.model';
 export class TeamrecordsController {
     constructor(
         @InjectModel(TeamRecord) private readonly model: ReturnModelType<typeof TeamRecord>,
-        @InjectModel(Match) private readonly matchesModel: ReturnModelType<typeof Match>
+        @InjectModel(Game) private readonly matchesModel: ReturnModelType<typeof Game>
     ){}
 
     @Get('option')

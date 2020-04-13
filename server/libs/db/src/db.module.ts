@@ -3,9 +3,10 @@ import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import {User} from './models/user.model';
 import { TeamRecord } from './models/teamrecord.model';
-import { Match } from './models/match.model';
+import { Game } from './models/game.model';
 
-const  models = TypegooseModule.forFeature([User,Match,TeamRecord])
+//数据库中User,Match,TeamRecord三个表作为模型导入
+const  models = TypegooseModule.forFeature([User,Game,TeamRecord])
 
 @Global()
 @Module({
@@ -21,6 +22,7 @@ const  models = TypegooseModule.forFeature([User,Match,TeamRecord])
     //     };
     //   },
     // }),
+    //引入数据库，路径为mongodb://localhost/sportstat
     TypegooseModule.forRoot('mongodb://localhost/sportstat', {
       useNewUrlParser:true,
       useUnifiedTopology:true,

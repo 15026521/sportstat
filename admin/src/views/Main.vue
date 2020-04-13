@@ -34,12 +34,26 @@
   export default class Main extends Vue {
     menu = {
       items:[
-        {
-          title:"内容管理",
+        { 
+          title: "首页" ,
           items: [
-          { title: "首页", path: "/" },
-          { title: "比赛管理", path: "/matches/list" },
-          { title: "数据管理", path: "/teamrecords/list" }
+          { title: "我的数据", path: "/" },
+          ]
+        },
+        {
+          title:"足球数据",
+          items: [
+          { title: "比赛管理", path: "/games/list" },
+          { title: "数据管理", path: "/teamrecords/list" },
+          { title: "统计分析", path: "" }
+        ]
+        },
+        {
+          title:"篮球数据",
+          items: [
+          { title: "比赛管理", path: "/games/list" },
+          { title: "数据管理", path: "/teamrecords/list" },
+          { title: "统计分析", path: "" }
         ]
         },
          {

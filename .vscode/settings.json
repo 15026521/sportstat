@@ -1,2 +1,6 @@
 {
+    "cSpell.words": [
+        "browserslist"
+    ],
+    "debug.node.autoAttach": "on"
 }
